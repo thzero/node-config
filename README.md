@@ -92,6 +92,7 @@ if (config.has('optionalFeature.detail')) {
 ```
 
 `config.get()` will throw an exception for undefined keys to help catch typos and missing values.
+`config.get()` can accept a default value; if the default value is provided then the value will be provided instead of an exception being thrown.
 Use `config.has()` to test if a configuration value is defined.
 
 **Start your app server:**

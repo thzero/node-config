@@ -331,6 +331,22 @@ vows.describe('Test suite for node-config')
           /Configuration property "" is not defined/
       );
     },
+    "get('customerDbPort', 'default') returns the config value of 5999": function() {
+      assert.equal(CONFIG.get('customerDbPort'), '5999');
+    },
+    "get('test', null) returns the default value of null": function() {
+      assert.equal(CONFIG.get('test', null), null);
+    },
+    "get('test', 'default') returns the default value": function() {
+      assert.equal(CONFIG.get('test', 'default'), 'default');
+    },
+    "get('test', 5) returns the default value of 5": function() {
+      assert.equal(CONFIG.get('test', 5), 5);
+    },
+    "get('test', { test: 'value' }) returns the default value": function() {
+      const value = { test: 'value' }
+      assert.equal(CONFIG.get('test', value), value);
+    },
   },
 
   'has() tests': {
